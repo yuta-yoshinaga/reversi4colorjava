@@ -1678,7 +1678,7 @@ public class Reversi implements Serializable
 				tmpD2 = (double)this.getPointCnt(ReversiConst.REVERSI_STS_WHITE);
 				tmpD2 += (double)this.getPointCnt(ReversiConst.REVERSI_STS_BLUE);
 				tmpD2 += (double)this.getPointCnt(ReversiConst.REVERSI_STS_RED);
-				this.mMasuStsAnzB[tmpY][tmpX].avg = tmpD1 / tmpD2;
+				this.mMasuStsAnzB[tmpY][tmpX].setAvg(tmpD1 / tmpD2);
 			}
 
 			// *** 自分が取れる平均コマ数 *** //
@@ -1883,7 +1883,7 @@ public class Reversi implements Serializable
 				tmpD2 = (double)this.getPointCnt(ReversiConst.REVERSI_STS_BLACK);
 				tmpD2 += (double)this.getPointCnt(ReversiConst.REVERSI_STS_BLUE);
 				tmpD2 += (double)this.getPointCnt(ReversiConst.REVERSI_STS_RED);
-				this.mMasuStsAnzW[tmpY,tmpX].avg = tmpD1 / tmpD2;
+				this.mMasuStsAnzW[tmpY][tmpX].setAvg(tmpD1 / tmpD2);
 			}
 
 			// *** 自分が取れる平均コマ数 *** //
@@ -1941,8 +1941,8 @@ public class Reversi implements Serializable
 				System.arraycopy(this.mMasuStsEnaR[i], 0, tmpMasuEnaR[i], 0, this.mMasuStsEnaR[i].length);
 			}
 
-			tmpY = this.mMasuPointL[cnt].y;
-			tmpX = this.mMasuPointL[cnt].x;
+			tmpY = this.mMasuPointL[cnt].getY();
+			tmpX = this.mMasuPointL[cnt].getX();
 			this.mMasuSts[tmpY][tmpX] = ReversiConst.REVERSI_STS_BLUE;				// 仮に置く
 			this.revMasuSts(ReversiConst.REVERSI_STS_BLUE,tmpY,tmpX);				// 仮にひっくり返す
 
@@ -1997,7 +1997,7 @@ public class Reversi implements Serializable
 						}else if(this.getEdgeSideTwo(i,j) == 0){					// 置く場所が角の二つ手前
 							this.mMasuStsAnzL[tmpY][tmpX].setEdgeSideTwoCnt(this.mMasuStsAnzL[tmpY][tmpX].getEdgeSideTwoCnt() + 1);
 							tmpBadPoint = 1 * this.mMasuStsCntB[i][j];
-						}else if(this.getEdgeSideThree(i][j) == 0){					// 置く場所が角の三つ手前
+						}else if(this.getEdgeSideThree(i,j) == 0){					// 置く場所が角の三つ手前
 							this.mMasuStsAnzL[tmpY][tmpX].setEdgeSideThreeCnt(this.mMasuStsAnzL[tmpY][tmpX].getEdgeSideThreeCnt() + 1);
 							tmpBadPoint = 1 * this.mMasuStsCntB[i][j];
 						}else{														// 置く場所がその他
@@ -2164,8 +2164,8 @@ public class Reversi implements Serializable
 				this.mMasuStsPassR[tmpY][tmpX] = 1;
 			}
 			if(this.getEdgeSideZero(tmpY,tmpX) == 0){								// 置いた場所が角
-				this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeCnt(this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeCnt() + 1);
-				this.mMasuStsAnzR[tmpY][tmpX].getGoodPoint(this.mMasuStsAnzR[tmpY][tmpX].getGoodPoint() + 10000 * this.mMasuStsCntR[tmpY][tmpX]);
+				this.mMasuStsAnzR[tmpY][tmpX].setOwnEdgeCnt(this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeCnt() + 1);
+				this.mMasuStsAnzR[tmpY][tmpX].setGoodPoint(this.mMasuStsAnzR[tmpY][tmpX].getGoodPoint() + 10000 * this.mMasuStsCntR[tmpY][tmpX]);
 			}else if(this.getEdgeSideOne(tmpY,tmpX) == 0){							// 置いた場所が角の一つ手前
 				this.mMasuStsAnzR[tmpY][tmpX].setOwnEdgeSideOneCnt(this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeSideOneCnt() + 1);
 				if(this.checkEdge(ReversiConst.REVERSI_STS_RED,tmpY,tmpX) != 0){	// 角を取られない
@@ -2270,9 +2270,9 @@ public class Reversi implements Serializable
 						if(this.mMasuStsAnzR[tmpY][tmpX].getOwnMax() < this.mMasuStsCntR[i][j]) this.mMasuStsAnzR[tmpY][tmpX].setOwnMax(this.mMasuStsCntR[i][j]);
 						// *** 自分の獲得予定の最小数保持 *** //
 						if(this.mMasuStsCntR[i][j] < this.mMasuStsAnzR[tmpY][tmpX].getOwnMin()) this.mMasuStsAnzR[tmpY][tmpX].setOwnMin(this.mMasuStsCntR[i][j]);
-						this.mMasuStsAnzR[tmpY][tmpX].ownPointCnt++;				// 自分の置ける場所の数
+						this.mMasuStsAnzR[tmpY][tmpX].setOwnPointCnt(this.mMasuStsAnzR[tmpY][tmpX].getOwnPointCnt() + 1);				// 自分の置ける場所の数
 						if(this.getEdgeSideZero(i,j) == 0){							// 置く場所が角
-							this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeCnt(this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeCnt() + 1);
+							this.mMasuStsAnzR[tmpY][tmpX].setOwnEdgeCnt(this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeCnt() + 1);
 							tmpGoodPoint = 100 * this.mMasuStsCntR[i][j];
 						}else if(this.getEdgeSideOne(i,j) == 0){					// 置く場所が角の一つ手前
 							this.mMasuStsAnzR[tmpY][tmpX].setOwnEdgeSideOneCnt(this.mMasuStsAnzR[tmpY][tmpX].getOwnEdgeSideOneCnt() + 1);
@@ -2322,15 +2322,17 @@ public class Reversi implements Serializable
 
 	////////////////////////////////////////////////////////////////////////////////
 	///	@brief			解析を行う
-	///	@fn				public void AnalysisReversi(int bPassEna,int wPassEna)
+	///	@fn				public void AnalysisReversi(int bPassEna,int wPassEna,int lPassEna,int rPassEna)
 	///	@param[in]		int bPassEna		1=黒パス有効
 	///	@param[in]		int wPassEna		1=白パス有効
+	///	@param[in]		int lPassEna		1=青パス有効
+	///	@param[in]		int rPassEna		1=赤パス有効
 	///	@return			ありません
 	///	@author			Yuta Yoshinaga
 	///	@date			2018.04.01
 	///
 	////////////////////////////////////////////////////////////////////////////////
-	public void AnalysisReversi(int bPassEna,int wPassEna)
+	public void AnalysisReversi(int bPassEna,int wPassEna,int lPassEna,int rPassEna)
 	{
 		// *** 相手をパスさせることができるマス検索 *** //
 		for(int i = 0;i < this.mMasuCnt;i++){						// 初期化

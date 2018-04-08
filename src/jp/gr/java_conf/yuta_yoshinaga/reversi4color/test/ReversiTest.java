@@ -141,7 +141,7 @@ class ReversiTest extends Reversi
 	void testGetmMasuPointCntB() {
 		int tgt = this.getmMasuPointCntB();
 		boolean flag = false;
-		if(tgt == 4)	flag = true;
+		if(tgt == 10)	flag = true;
 		assertTrue(flag);
 	}
 
@@ -158,7 +158,7 @@ class ReversiTest extends Reversi
 	void testGetmMasuBetCntB() {
 		int tgt = this.getmMasuBetCntB();
 		boolean flag = false;
-		if(tgt == 2)	flag = true;
+		if(tgt == 4)	flag = true;
 		assertTrue(flag);
 	}
 
@@ -260,7 +260,7 @@ class ReversiTest extends Reversi
 	void testGetmMasuPointCntW() {
 		int tgt = this.getmMasuPointCntW();
 		boolean flag = false;
-		if(tgt == 4)	flag = true;
+		if(tgt == 15)	flag = true;
 		assertTrue(flag);
 	}
 
@@ -277,7 +277,7 @@ class ReversiTest extends Reversi
 	void testGetmMasuBetCntW() {
 		int tgt = this.getmMasuBetCntW();
 		boolean flag = false;
-		if(tgt == 2)	flag = true;
+		if(tgt == 4)	flag = true;
 		assertTrue(flag);
 	}
 
@@ -285,6 +285,244 @@ class ReversiTest extends Reversi
 	void testSetmMasuBetCntW() {
 		this.setmMasuBetCntW(1);
 		int tgt = this.getmMasuBetCntW();
+		boolean flag = false;
+		if(tgt == 1)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsEnaL() {
+		int[][] tgt = this.getmMasuStsEnaL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsEnaL() {
+		this.setmMasuStsEnaL(new int [8][8]);
+		int[][] tgt = this.getmMasuStsEnaL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsCntL() {
+		int[][] tgt = this.getmMasuStsCntL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsCntL() {
+		this.setmMasuStsCntL(new int [8][8]);
+		int[][] tgt = this.getmMasuStsCntL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsPassL() {
+		int[][] tgt = this.getmMasuStsPassL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsPassL() {
+		this.setmMasuStsPassL(new int [8][8]);
+		int[][] tgt = this.getmMasuStsPassL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsAnzL() {
+		ReversiAnz[][] tgt = this.getmMasuStsAnzL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsAnzL() {
+		this.setmMasuStsAnzL(new ReversiAnz [8][8]);
+		ReversiAnz[][] tgt = this.getmMasuStsAnzL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuPointL() {
+		ReversiPoint[] tgt = this.getmMasuPointL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuPointL() {
+		this.setmMasuPointL(new ReversiPoint [8]);
+		ReversiPoint[] tgt = this.getmMasuPointL();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuPointCntL() {
+		int tgt = this.getmMasuPointCntL();
+		boolean flag = false;
+		if(tgt == 12)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuPointCntL() {
+		this.setmMasuPointCntL(1);
+		int tgt = this.getmMasuPointCntL();
+		boolean flag = false;
+		if(tgt == 1)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuBetCntL() {
+		int tgt = this.getmMasuBetCntL();
+		boolean flag = false;
+		if(tgt == 4)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuBetCntL() {
+		this.setmMasuBetCntL(1);
+		int tgt = this.getmMasuBetCntL();
+		boolean flag = false;
+		if(tgt == 1)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsEnaR() {
+		int[][] tgt = this.getmMasuStsEnaR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsEnaR() {
+		this.setmMasuStsEnaR(new int [8][8]);
+		int[][] tgt = this.getmMasuStsEnaR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsCntR() {
+		int[][] tgt = this.getmMasuStsCntR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsCntR() {
+		this.setmMasuStsCntR(new int [8][8]);
+		int[][] tgt = this.getmMasuStsCntR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsPassR() {
+		int[][] tgt = this.getmMasuStsPassR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsPassR() {
+		this.setmMasuStsPassR(new int [8][8]);
+		int[][] tgt = this.getmMasuStsPassR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuStsAnzR() {
+		ReversiAnz[][] tgt = this.getmMasuStsAnzR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuStsAnzR() {
+		this.setmMasuStsAnzR(new ReversiAnz [8][8]);
+		ReversiAnz[][] tgt = this.getmMasuStsAnzR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuPointR() {
+		ReversiPoint[] tgt = this.getmMasuPointR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuPointR() {
+		this.setmMasuPointR(new ReversiPoint [8]);
+		ReversiPoint[] tgt = this.getmMasuPointR();
+		boolean flag = false;
+		if(tgt != null)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuPointCntR() {
+		int tgt = this.getmMasuPointCntR();
+		boolean flag = false;
+		if(tgt == 10)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuPointCntR() {
+		this.setmMasuPointCntR(1);
+		int tgt = this.getmMasuPointCntR();
+		boolean flag = false;
+		if(tgt == 1)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testGetmMasuBetCntR() {
+		int tgt = this.getmMasuBetCntR();
+		boolean flag = false;
+		if(tgt == 4)	flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
+	void testSetmMasuBetCntR() {
+		this.setmMasuBetCntR(1);
+		int tgt = this.getmMasuBetCntR();
 		boolean flag = false;
 		if(tgt == 1)	flag = true;
 		assertTrue(flag);
@@ -383,7 +621,7 @@ class ReversiTest extends Reversi
 
 	@Test
 	void testAnalysisReversi() {
-		this.AnalysisReversi(1,1);
+		this.AnalysisReversi(1,1,1,1);
 		boolean flag = true;
 		assertTrue(flag);
 	}

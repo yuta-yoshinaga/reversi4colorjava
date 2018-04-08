@@ -53,7 +53,7 @@ class ReversiSettingTest extends ReversiSetting
 	void testGetmType() {
 		int tgt = this.getmType();
 		boolean flag = false;
-		if(tgt == ReversiConst.DEF_TYPE_HARD)	flag = true;
+		if(tgt == ReversiConst.DEF_TYPE_NOR)	flag = true;
 		assertTrue(flag);
 	}
 
@@ -138,7 +138,7 @@ class ReversiSettingTest extends ReversiSetting
 	void testGetmMasuCntMenu() {
 		int tgt = this.getmMasuCntMenu();
 		boolean flag = false;
-		if(tgt == ReversiConst.DEF_MASU_CNT_8)	flag = true;
+		if(tgt == ReversiConst.DEF_MASU_CNT_12)	flag = true;
 		assertTrue(flag);
 	}
 
@@ -155,7 +155,7 @@ class ReversiSettingTest extends ReversiSetting
 	void testGetmMasuCnt() {
 		int tgt = this.getmMasuCnt();
 		boolean flag = false;
-		if(tgt == ReversiConst.DEF_MASU_CNT_8_VAL)	flag = true;
+		if(tgt == ReversiConst.DEF_MASU_CNT_12_VAL)	flag = true;
 		assertTrue(flag);
 	}
 
@@ -351,19 +351,21 @@ class ReversiSettingTest extends ReversiSetting
 		this.reset();
 		boolean flag = true;
 		if(this.getmMode() != ReversiConst.DEF_MODE_ONE)						flag = false;
-		if(this.getmType() != ReversiConst.DEF_TYPE_HARD)						flag = false;
+		if(this.getmType() != ReversiConst.DEF_TYPE_NOR)						flag = false;
 		if(this.getmPlayer() != ReversiConst.REVERSI_STS_BLACK)					flag = false;
 		if(this.getmAssist() != ReversiConst.DEF_ASSIST_ON)						flag = false;
 		if(this.getmGameSpd() != ReversiConst.DEF_GAME_SPD_MID)					flag = false;
 		if(this.getmEndAnim() != ReversiConst.DEF_END_ANIM_ON)					flag = false;
-		if(this.getmMasuCntMenu() != ReversiConst.DEF_MASU_CNT_8)				flag = false;
-		if(this.getmMasuCnt() != ReversiConst.DEF_MASU_CNT_8_VAL)				flag = false;
+		if(this.getmMasuCntMenu() != ReversiConst.DEF_MASU_CNT_12)				flag = false;
+		if(this.getmMasuCnt() != ReversiConst.DEF_MASU_CNT_12_VAL)				flag = false;
 		if(this.getmPlayCpuInterVal() != ReversiConst.DEF_GAME_SPD_MID_VAL2)	flag = false;
 		if(this.getmPlayDrawInterVal() != ReversiConst.DEF_GAME_SPD_MID_VAL)	flag = false;
 		if(this.getmEndDrawInterVal() != 100)									flag = false;
 		if(this.getmEndInterVal() != 500)										flag = false;
 		if(!this.getmPlayerColor1().equals("#000000"))							flag = false;
 		if(!this.getmPlayerColor2().equals("#FFFFFF"))							flag = false;
+		if(!this.getmPlayerColor3().equals("#0000FF"))							flag = false;
+		if(!this.getmPlayerColor4().equals("#FF0000"))							flag = false;
 		if(!this.getmBackGroundColor().equals("#00FF00"))						flag = false;
 		if(!this.getmBorderColor().equals("#000000"))							flag = false;
 		assertTrue(flag);

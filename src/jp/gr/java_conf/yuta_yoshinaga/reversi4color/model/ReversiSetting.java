@@ -525,7 +525,7 @@ public class ReversiSetting implements Serializable
 		this.mGameSpd = ReversiConst.DEF_GAME_SPD_MID;						// ゲームスピード
 		this.mEndAnim = ReversiConst.DEF_END_ANIM_ON;						// ゲーム終了アニメーション
 		this.mMasuCntMenu = ReversiConst.DEF_MASU_CNT_12;					// マスの数
-		this.mMasuCnt = ReversiConst.DEF_MASU_CNT_12;						// マスの数
+		this.mMasuCnt = ReversiConst.DEF_MASU_CNT_12_VAL;					// マスの数
 		this.mPlayCpuInterVal = ReversiConst.DEF_GAME_SPD_MID_VAL2;			// CPU対戦時のインターバル(msec)
 		this.mPlayDrawInterVal = ReversiConst.DEF_GAME_SPD_MID_VAL;			// 描画のインターバル(msec)
 		this.mEndDrawInterVal = 100;										// 終了アニメーション描画のインターバル(msec)

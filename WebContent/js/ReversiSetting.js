@@ -17,8 +17,10 @@
 var REVERSI_STS_NONE = 0; //!< コマ無し
 var REVERSI_STS_BLACK = 1; //!< 黒
 var REVERSI_STS_WHITE = 2; //!< 白
+var REVERSI_STS_BLUE = 3; //!< 黒
+var REVERSI_STS_RED = 4; //!< 白
 var REVERSI_STS_MIN = 0; //!< ステータス最小値
-var REVERSI_STS_MAX = 2; //!< ステータス最大値
+var REVERSI_STS_MAX = 4; //!< ステータス最大値
 var REVERSI_MASU_CNT = 8; //!< 縦横マス数
 var DEF_MODE_ONE = 0; //!< 一人対戦
 var DEF_MODE_TWO = 1; //!< 二人対戦
@@ -69,7 +71,7 @@ var ReversiSetting = (function () {
     ////////////////////////////////////////////////////////////////////////////////
     function ReversiSetting() {
         this.mMode = DEF_MODE_ONE; //!< 現在のモード
-        this.mType = DEF_TYPE_HARD; //!< 現在のタイプ
+        this.mType = DEF_TYPE_NOR; //!< 現在のタイプ
         this.mPlayer = REVERSI_STS_BLACK; //!< プレイヤーの色
         this.mAssist = DEF_ASSIST_ON; //!< アシスト
         this.mGameSpd = DEF_GAME_SPD_MID; //!< ゲームスピード
@@ -83,6 +85,8 @@ var ReversiSetting = (function () {
         this.mTheme = 'Cerulean'; //!< テーマ名
         this.mPlayerColor1 = '#000000'; //!< プレイヤー1の色
         this.mPlayerColor2 = '#ffffff'; //!< プレイヤー2の色
+        this.mPlayerColor3 = '#0000FF'; //!< プレイヤー3の色
+        this.mPlayerColor4 = '#FF0000'; //!< プレイヤー4の色
         this.mBackGroundColor = '#00ff00'; //!< 背景の色
         this.mBorderColor = '#000000'; //!< 枠線の色
     }

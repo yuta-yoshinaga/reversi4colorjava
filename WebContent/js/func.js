@@ -130,11 +130,13 @@ $(document).ready(function() {
         });
     });
     //storage.clear();
-    var lReversiSetting = storage.getItem('appSetting');
+    var lReversiSetting = storage.getItem('appSetting2');
     if (lReversiSetting != null) reversiSetting = JSON.parse(lReversiSetting);
-    else storage.setItem('appSetting', JSON.stringify(reversiSetting));
+    else storage.setItem('appSetting2', JSON.stringify(reversiSetting));
     if (reversiSetting.mPlayerColor1 === undefined) reversiSetting.mPlayerColor1 = '#000000';
     if (reversiSetting.mPlayerColor2 === undefined) reversiSetting.mPlayerColor2 = '#ffffff';
+    if (reversiSetting.mPlayerColor3 === undefined) reversiSetting.mPlayerColor3 = '#0000ff';
+    if (reversiSetting.mPlayerColor4 === undefined) reversiSetting.mPlayerColor4 = '#ff0000';
     if (reversiSetting.mBackGroundColor === undefined) reversiSetting.mBackGroundColor = '#00ff00';
     if (reversiSetting.mBorderColor === undefined) reversiSetting.mBorderColor = '#000000';
     // *** 設定値をメニューに反映 *** //
@@ -196,10 +198,12 @@ $(document).ready(function() {
 
         reversiSetting.mPlayerColor1 = $('#mPlayerColor1 input').val();
         reversiSetting.mPlayerColor2 = $('#mPlayerColor2 input').val();
+        reversiSetting.mPlayerColor3 = $('#mPlayerColor3 input').val();
+        reversiSetting.mPlayerColor4 = $('#mPlayerColor4 input').val();
         reversiSetting.mBackGroundColor = $('#mBackGroundColor input').val();
         reversiSetting.mBorderColor = $('#mBorderColor input').val();
 
-        storage.setItem('appSetting', JSON.stringify(reversiSetting));
+        storage.setItem('appSetting2', JSON.stringify(reversiSetting));
         appInit();
         setSetting(reversiSetting);
         reset();
@@ -309,6 +313,10 @@ function set_menu_ui() {
     ele = $('#mPlayerColor1 input').minicolors('value', reversiSetting.mPlayerColor1);
     ele = $('#mPlayerColor2 input').attr('value', reversiSetting.mPlayerColor2);
     ele = $('#mPlayerColor2 input').minicolors('value', reversiSetting.mPlayerColor2);
+    ele = $('#mPlayerColor3 input').attr('value',reversiSetting.mPlayerColor3);
+    ele = $('#mPlayerColor3 input').minicolors('value',reversiSetting.mPlayerColor3);
+    ele = $('#mPlayerColor4 input').attr('value',reversiSetting.mPlayerColor4);
+    ele = $('#mPlayerColor4 input').minicolors('value',reversiSetting.mPlayerColor4);
     ele = $('#mBackGroundColor input').attr('value', reversiSetting.mBackGroundColor);
     ele = $('#mBackGroundColor input').minicolors('value', reversiSetting.mBackGroundColor);
     ele = $('#mBorderColor input').attr('value', reversiSetting.mBorderColor);
@@ -395,15 +403,31 @@ function drawSingle(y, x, sts, bk, text) {
     if (sts == REVERSI_STS_NONE) {
         tgtEle2.removeClass('stone_white');
         tgtEle2.removeClass('stone_black');
+        tgtEle2.removeClass('stone_blue');
+        tgtEle2.removeClass('stone_red');
         tgtEle2.css('background-color', 'transparent');
     } else if (sts == REVERSI_STS_BLACK) {
         tgtEle2.removeClass('stone_white');
         tgtEle2.addClass('stone_black');
+        tgtEle2.removeClass('stone_blue');
+        tgtEle2.removeClass('stone_red');
         tgtEle2.css('background-color', reversiSetting.mPlayerColor1);
     } else if (sts == REVERSI_STS_WHITE) {
         tgtEle2.addClass('stone_white');
         tgtEle2.removeClass('stone_black');
         tgtEle2.css('background-color', reversiSetting.mPlayerColor2);
+    } else if (sts == REVERSI_STS_BLUE) {
+        tgtEle2.removeClass('stone_white');
+        tgtEle2.removeClass('stone_black');
+        tgtEle2.addClass('stone_blue');
+        tgtEle2.removeClass('stone_red');
+        tgtEle2.css('background-color', reversiSetting.mPlayerColor3);
+    } else if (sts == REVERSI_STS_RED) {
+        tgtEle2.removeClass('stone_white');
+        tgtEle2.removeClass('stone_black');
+        tgtEle2.removeClass('stone_blue');
+        tgtEle2.addClass('stone_red');
+        tgtEle2.css('background-color', reversiSetting.mPlayerColor4);
     }
     // *** マスの状態変更 *** //
     var bkCol = reversiSetting.mBackGroundColor;

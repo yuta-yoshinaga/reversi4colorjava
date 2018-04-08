@@ -324,6 +324,13 @@ class ReversiPlayTest extends ReversiPlay
 	}
 
 	@Test
+	void testGetNextCol() {
+		this.getNextCol(ReversiConst.REVERSI_STS_BLACK);
+		boolean flag = true;
+		assertTrue(flag);
+	}
+
+	@Test
 	void testGameEndAnimExec() {
 		this.gameEndAnimExec();
 		boolean flag = true;

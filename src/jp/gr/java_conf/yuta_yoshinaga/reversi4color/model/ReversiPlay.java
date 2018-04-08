@@ -420,12 +420,12 @@ public class ReversiPlay implements Serializable
 					this.execMessage(ReversiConst.LC_MSG_ERASE_INFO_ALL, null);
 				}
 				this.sendDrawMsg(y, x);														// 描画
-				this.drawUpdate(ReversiConst.DEF_ASSIST_OFF);								// その他コマ描画
+				this.drawUpdate(ReversiConst.DEF_ASSIST_OFF);							// その他コマ描画
 				if (this.mReversi.getGameEndSts() == 0) {
 					for(;;){
 						tmpCol = this.getNextCol(tmpCol);
 						if(this.mReversi.getColorEna(tmpCol) == 0){
-							if(this.mSetting.mMode == ReversiConst.DEF_MODE_ONE){			// CPU対戦
+							if(this.mSetting.getmMode() == ReversiConst.DEF_MODE_ONE){	// CPU対戦
 								if(tmpCol != this.mCurColor) cpuEna = 1;
 							}else{															// 四人対戦
 								this.mCurColor = tmpCol;
@@ -452,7 +452,7 @@ public class ReversiPlay implements Serializable
 				for(;;){
 					tmpCol = this.getNextCol(tmpCol);
 					if(this.mReversi.getColorEna(tmpCol) == 0){
-						if(this.mSetting.mMode == ReversiConst.DEF_MODE_ONE){				// CPU対戦
+						if(this.mSetting.getmMode() == ReversiConst.DEF_MODE_ONE){		// CPU対戦
 							if(tmpCol != this.mCurColor) cpuEna = 1;
 						}else{																// 四人対戦
 							this.mCurColor = tmpCol;
@@ -878,7 +878,7 @@ public class ReversiPlay implements Serializable
 					}
 
 					if (this.mReversi.setMasuSts(color, setY, setX) == 0) {
-						if (this.mSetting.mType == ReversiConst.DEF_TYPE_HARD) this.mReversi.AnalysisReversi(this.mPassEnaB, this.mPassEnaW, this.mPassEnaL, this.mPassEnaR);
+						if (this.mSetting.getmType() == ReversiConst.DEF_TYPE_HARD) this.mReversi.AnalysisReversi(this.mPassEnaB, this.mPassEnaW, this.mPassEnaL, this.mPassEnaR);
 						this.sendDrawMsg(setY, setX);								// 描画
 						update = 1;
 					}
@@ -1074,7 +1074,6 @@ public class ReversiPlay implements Serializable
 			this.execMessage(ReversiConst.LC_MSG_ERASE_ALL, null);
 
 			// *** マス描画 *** //
-			int bCnt2, wCnt2, bEnd, wEnd;
 			bCnt2 = 0;
 			wCnt2 = 0;
 			lCnt2 = 0;
