@@ -1,0 +1,1 @@
+heroku deploy:war --war target/reversi4colorjava-1.0.0-SNAPSHOT.war --app reversi4colorjava

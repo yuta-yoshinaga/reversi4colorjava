@@ -1,0 +1,595 @@
+////////////////////////////////////////////////////////////////////////////////
+///	@file			ReversiAnz.java
+///	@brief			リバーシ解析クラス実装ファイル
+///	@author			Yuta Yoshinaga
+///	@date			2018.04.01
+///	$Version:		$
+///	$Revision:		$
+///
+/// (c) 2018 Yuta Yoshinaga.
+///
+/// - 本ソフトウェアの一部又は全てを無断で複写複製（コピー）することは、
+///   著作権侵害にあたりますので、これを禁止します。
+/// - 本製品の使用に起因する侵害または特許権その他権利の侵害に関しては
+///   当方は一切その責任を負いません。
+///
+////////////////////////////////////////////////////////////////////////////////
+
+package jp.gr.java_conf.yuta_yoshinaga.reversi4color.model;
+
+import java.io.Serializable;
+
+////////////////////////////////////////////////////////////////////////////////
+///	@class		ReversiAnz
+///	@brief		リバーシ解析クラス
+///
+////////////////////////////////////////////////////////////////////////////////
+public class ReversiAnz implements Serializable
+{
+	private int min;													//!< 最小値
+	private int max;													//!< 最大値
+	private double avg;													//!< 平均
+	private int pointCnt;												//!< 置けるポイント数
+	private int edgeCnt;												//!< 角を取れるポイント数
+	private int edgeSideOneCnt;											//!< 角一つ前を取れるポイント数
+	private int edgeSideTwoCnt;											//!< 角二つ前を取れるポイント数
+	private int edgeSideThreeCnt;										//!< 角三つ前を取れるポイント数
+	private int edgeSideOtherCnt;										//!< それ以外を取れるポイント数
+	private int ownMin;													//!< 最小値
+	private int ownMax;													//!< 最大値
+	private double ownAvg;												//!< 平均
+	private int ownPointCnt;											//!< 置けるポイント数
+	private int ownEdgeCnt;												//!< 角を取れるポイント数
+	private int ownEdgeSideOneCnt;										//!< 角一つ前を取れるポイント数
+	private int ownEdgeSideTwoCnt;										//!< 角二つ前を取れるポイント数
+	private int ownEdgeSideThreeCnt;									//!< 角三つ前を取れるポイント数
+	private int ownEdgeSideOtherCnt;									//!< それ以外を取れるポイント数
+	private int badPoint;												//!< 悪手ポイント
+	private int goodPoint;												//!< 良手ポイント
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getMin()
+	///	@return			int min
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getMin() {
+		return min;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setMin(int min)
+	///	@param[in]		int min
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setMin(int min) {
+		this.min = min;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getMax()
+	///	@return			int max
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getMax() {
+		return max;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setMax(int max)
+	///	@param[in]		int max
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setMax(int max) {
+		this.max = max;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				double getAvg()
+	///	@return			double avg
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public double getAvg() {
+		return avg;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setAvg(double avg)
+	///	@param[in]		double avg
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setAvg(double avg) {
+		this.avg = avg;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getPointCnt()
+	///	@return			int pointCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getPointCnt() {
+		return pointCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setPointCnt(int pointCnt)
+	///	@param[in]		int pointCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setPointCnt(int pointCnt) {
+		this.pointCnt = pointCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getEdgeCnt()
+	///	@return			int edgeCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getEdgeCnt() {
+		return edgeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setEdgeCnt(int edgeCnt)
+	///	@param[in]		int edgeCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setEdgeCnt(int edgeCnt) {
+		this.edgeCnt = edgeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getEdgeSideOneCnt()
+	///	@return			int edgeSideOneCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getEdgeSideOneCnt() {
+		return edgeSideOneCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setEdgeSideOneCnt(int edgeSideOneCnt)
+	///	@param[in]		int edgeSideOneCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setEdgeSideOneCnt(int edgeSideOneCnt) {
+		this.edgeSideOneCnt = edgeSideOneCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getEdgeSideTwoCnt()
+	///	@return			int edgeSideTwoCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getEdgeSideTwoCnt() {
+		return edgeSideTwoCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setEdgeSideTwoCnt(int edgeSideTwoCnt)
+	///	@param[in]		int edgeSideTwoCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setEdgeSideTwoCnt(int edgeSideTwoCnt) {
+		this.edgeSideTwoCnt = edgeSideTwoCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getEdgeSideThreeCnt()
+	///	@return			int edgeSideThreeCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getEdgeSideThreeCnt() {
+		return edgeSideThreeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setEdgeSideThreeCnt(int edgeSideThreeCnt)
+	///	@param[in]		int edgeSideThreeCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setEdgeSideThreeCnt(int edgeSideThreeCnt) {
+		this.edgeSideThreeCnt = edgeSideThreeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getEdgeSideOtherCnt()
+	///	@return			int edgeSideOtherCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getEdgeSideOtherCnt() {
+		return edgeSideOtherCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setEdgeSideOtherCnt(int edgeSideOtherCnt)
+	///	@param[in]		int edgeSideOtherCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setEdgeSideOtherCnt(int edgeSideOtherCnt) {
+		this.edgeSideOtherCnt = edgeSideOtherCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnMin()
+	///	@return			int ownMin
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnMin() {
+		return ownMin;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnMin(int ownMin)
+	///	@param[in]		int ownMin
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnMin(int ownMin) {
+		this.ownMin = ownMin;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnMax()
+	///	@return			int ownMax
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnMax() {
+		return ownMax;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnMax(int ownMax)
+	///	@param[in]		int ownMax
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnMax(int ownMax) {
+		this.ownMax = ownMax;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				double getOwnAvg()
+	///	@return			double ownAvg
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public double getOwnAvg() {
+		return ownAvg;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnAvg(double ownAvg)
+	///	@param[in]		double ownAvg
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnAvg(double ownAvg) {
+		this.ownAvg = ownAvg;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnPointCnt()
+	///	@return			int ownPointCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnPointCnt() {
+		return ownPointCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnPointCnt(int ownPointCnt)
+	///	@param[in]		int ownPointCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnPointCnt(int ownPointCnt) {
+		this.ownPointCnt = ownPointCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnEdgeCnt()
+	///	@return			int ownEdgeCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnEdgeCnt() {
+		return ownEdgeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnEdgeCnt(int ownEdgeCnt)
+	///	@param[in]		int ownEdgeCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnEdgeCnt(int ownEdgeCnt) {
+		this.ownEdgeCnt = ownEdgeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnEdgeSideOneCnt()
+	///	@return			int ownEdgeSideOneCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnEdgeSideOneCnt() {
+		return ownEdgeSideOneCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnEdgeSideOneCnt(int ownEdgeSideOneCnt)
+	///	@param[in]		int ownEdgeSideOneCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnEdgeSideOneCnt(int ownEdgeSideOneCnt) {
+		this.ownEdgeSideOneCnt = ownEdgeSideOneCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnEdgeSideTwoCnt()
+	///	@return			int ownEdgeSideTwoCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnEdgeSideTwoCnt() {
+		return ownEdgeSideTwoCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnEdgeSideTwoCnt(int ownEdgeSideTwoCnt)
+	///	@param[in]		int ownEdgeSideTwoCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnEdgeSideTwoCnt(int ownEdgeSideTwoCnt) {
+		this.ownEdgeSideTwoCnt = ownEdgeSideTwoCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnEdgeSideThreeCnt()
+	///	@return			int ownEdgeSideThreeCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnEdgeSideThreeCnt() {
+		return ownEdgeSideThreeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnEdgeSideThreeCnt(int ownEdgeSideThreeCnt)
+	///	@param[in]		int ownEdgeSideThreeCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnEdgeSideThreeCnt(int ownEdgeSideThreeCnt) {
+		this.ownEdgeSideThreeCnt = ownEdgeSideThreeCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getOwnEdgeSideOtherCnt()
+	///	@return			int ownEdgeSideOtherCnt
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getOwnEdgeSideOtherCnt() {
+		return ownEdgeSideOtherCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setOwnEdgeSideOtherCnt(int ownEdgeSideOtherCnt)
+	///	@param[in]		int ownEdgeSideOtherCnt
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setOwnEdgeSideOtherCnt(int ownEdgeSideOtherCnt) {
+		this.ownEdgeSideOtherCnt = ownEdgeSideOtherCnt;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getBadPoint()
+	///	@return			int badPoint
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getBadPoint() {
+		return badPoint;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setBadPoint(int badPoint)
+	///	@param[in]		int badPoint
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setBadPoint(int badPoint) {
+		this.badPoint = badPoint;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			ゲッター
+	///	@fn				int getGoodPoint()
+	///	@return			int goodPoint
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public int getGoodPoint() {
+		return goodPoint;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			セッター
+	///	@fn				void setGoodPoint(int goodPoint)
+	///	@param[in]		int goodPoint
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2018.04.01
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void setGoodPoint(int goodPoint) {
+		this.goodPoint = goodPoint;
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			コンストラクタ
+	///	@fn				public ReversiAnz()
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2014.07.23
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public ReversiAnz()
+	{
+		this.reset();
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	///	@brief			リセット
+	///	@fn				public void reset()
+	///	@return			ありません
+	///	@author			Yuta Yoshinaga
+	///	@date			2014.07.23
+	///
+	////////////////////////////////////////////////////////////////////////////////
+	public void reset()
+	{
+		this.min = 0;
+		this.max = 0;
+		this.avg = 0.0f;
+		this.pointCnt = 0;
+		this.edgeCnt = 0;
+		this.edgeSideOneCnt = 0;
+		this.edgeSideTwoCnt = 0;
+		this.edgeSideThreeCnt = 0;
+		this.edgeSideOtherCnt = 0;
+		this.ownMin = 0;
+		this.ownMax = 0;
+		this.ownAvg = 0.0f;
+		this.ownPointCnt = 0;
+		this.ownEdgeCnt = 0;
+		this.ownEdgeSideOneCnt = 0;
+		this.ownEdgeSideTwoCnt = 0;
+		this.ownEdgeSideThreeCnt = 0;
+		this.ownEdgeSideOtherCnt = 0;
+		this.badPoint = 0;
+		this.goodPoint = 0;
+	}
+}
+
