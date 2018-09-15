@@ -1,0 +1,5 @@
+<map id="jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiPlay.CurColMsgLocal" name="jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiPlay.CurColMsgLocal">
+<area shape="rect" id="node2" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_callbacks_json.html#aa24aa059cbc2cec79b819ab70167ac57" title="ゲッター " alt="" coords="261,5,468,61"/>
+<area shape="rect" id="node3" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play_delegate.html#a05a6a407e504dcc80c647730d9158619" title="現在の色メッセージ " alt="" coords="260,85,469,141"/>
+<area shape="rect" id="node4" href="$interfacejp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play_interface.html#a14b9f5313158371008ef1eb13375a9c9" title="現在の色メッセージ " alt="" coords="517,85,724,141"/>
+</map>

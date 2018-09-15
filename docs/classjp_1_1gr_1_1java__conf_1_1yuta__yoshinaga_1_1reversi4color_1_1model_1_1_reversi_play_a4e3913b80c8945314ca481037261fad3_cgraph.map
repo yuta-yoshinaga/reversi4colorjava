@@ -1,0 +1,5 @@
+<map id="jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiPlay.DrawSingleLocal" name="jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiPlay.DrawSingleLocal">
+<area shape="rect" id="node2" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_callbacks_json.html#aa24aa059cbc2cec79b819ab70167ac57" title="ゲッター " alt="" coords="262,5,469,61"/>
+<area shape="rect" id="node3" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play_delegate.html#aae4136413e2cded6c6f3fab48fd5e382" title="1マス描画 " alt="" coords="260,85,471,141"/>
+<area shape="rect" id="node4" href="$interfacejp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play_interface.html#abefd01c37c71b138075732f487565974" title="1マス描画 " alt="" coords="519,85,727,141"/>
+</map>

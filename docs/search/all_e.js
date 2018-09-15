@@ -1,0 +1,5 @@
+var searchData=
+[
+  ['viewmsgdlg',['ViewMsgDlg',['../classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1controller_1_1_front_controller.html#a9ca5cbf39718adaaf22fbbfcd2a96bc0',1,'jp.gr.java_conf.yuta_yoshinaga.reversi4color.controller.FrontController.ViewMsgDlg()'],['../classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play_delegate.html#a8518655c312f697e5c0443a59ebefcac',1,'jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiPlayDelegate.ViewMsgDlg()'],['../interfacejp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play_interface.html#a015b08e6cc6eb685eae8ff7d9fb5e84d',1,'jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiPlayInterface.ViewMsgDlg()']]],
+  ['viewmsgdlglocal',['ViewMsgDlgLocal',['../classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play.html#a493a1f204aec26aee2c45910e75079de',1,'jp::gr::java_conf::yuta_yoshinaga::reversi4color::model::ReversiPlay']]]
+];

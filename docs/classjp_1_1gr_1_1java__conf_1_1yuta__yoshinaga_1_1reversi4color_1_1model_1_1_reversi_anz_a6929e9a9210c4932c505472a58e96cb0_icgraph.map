@@ -1,0 +1,12 @@
+<map id="jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiAnz.setOwnEdgeCnt" name="jp.gr.java_conf.yuta_yoshinaga.reversi4color.model.ReversiAnz.setOwnEdgeCnt">
+<area shape="rect" id="node2" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi.html#ac79452ba23b01dadf1457f5140df6b19" title="解析を行う(黒) " alt="" coords="260,5,467,61"/>
+<area shape="rect" id="node9" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi.html#a8643f3c3c577c58851e8a4d80b1f884a" title="解析を行う(青) " alt="" coords="260,85,467,141"/>
+<area shape="rect" id="node10" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi.html#afcb5facf94a53defb4364dfb5e161f40" title="解析を行う(赤) " alt="" coords="260,165,467,221"/>
+<area shape="rect" id="node11" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi.html#a9658ce8a0d8a7171ce5b8735b044d9ec" title="解析を行う(白) " alt="" coords="260,245,467,301"/>
+<area shape="rect" id="node3" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi.html#a571d7c1968997ebe6d9c4713d904eca5" title="解析を行う " alt="" coords="515,125,721,181"/>
+<area shape="rect" id="node4" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play.html#ae7098684acef61df86d616c888ae38db" title="リセット処理 " alt="" coords="1024,60,1231,116"/>
+<area shape="rect" id="node6" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play.html#a47850b543c7dc5e9fa565fdbe54ff3d1" title="リバーシプレイ " alt="" coords="1279,125,1485,181"/>
+<area shape="rect" id="node7" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play.html#afe405728808a1a15be97490d9a23cb49" title="リバーシプレイコンピューター " alt="" coords="769,191,976,247"/>
+<area shape="rect" id="node5" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1controller_1_1_front_controller.html#aa67799e2c8b3f194ef16420c3ebddcb4" title="POST. " alt="" coords="1533,93,1759,149"/>
+<area shape="rect" id="node8" href="$classjp_1_1gr_1_1java__conf_1_1yuta__yoshinaga_1_1reversi4color_1_1model_1_1_reversi_play.html#a6d9de8637f6de9c4c11bc340f9b1c413" title="リバーシプレイサブ " alt="" coords="1024,191,1231,247"/>
+</map>
